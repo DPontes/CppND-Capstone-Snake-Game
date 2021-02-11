@@ -28,6 +28,10 @@ This project was chosen due to the lack of time to complete it given the develop
 
 ## Enhancements to the game
 
+### Added a Border around the Perimeter
+
+Something, something...
+
 ## Project Requirements (Rubric)
 
 The rubric for this project has been translated into Automated Github Issues which can be followed in the [Project Kanban Board](https://github.com/DPontes/CppND-Capstone-Snake-Game/projects/1)
