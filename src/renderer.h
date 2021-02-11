@@ -8,7 +8,8 @@
 class Renderer {
  public:
   Renderer(const std::size_t screen_width, const std::size_t screen_height,
-           const std::size_t grid_width, const std::size_t grid_height);
+           const std::size_t grid_width, const std::size_t grid_height,
+           Border &border);
   ~Renderer();
 
   void Render(Snake const snake, SDL_Point const &food);
@@ -17,6 +18,8 @@ class Renderer {
  private:
   SDL_Window *sdl_window;
   SDL_Renderer *sdl_renderer;
+
+  Border border;
 
   const std::size_t screen_width;
   const std::size_t screen_height;
