@@ -52,7 +52,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
 
   // Render border - colour green
   SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0xFF, 0x00, 0x00);
-  for (SDL_Point const &point : border.borderLine) {
+  for (SDL_Point const &point : border.getBorder()) {
     block.x = border.getBorder()[point].x * block.w;
     block.y = border.getBorder()[point].y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
