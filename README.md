@@ -28,6 +28,12 @@ This project was chosen due to the lack of time to complete it given the develop
 
 ## Enhancements to the game
 
+### Added a Border around the Perimeter
+
+An infinite world is rather boring, so a border around the perimeter was added as a new `Border` class. It is rendered as a green line, and if the snake goes *into* the border, the game finishes. The initial solution can be seen in the [PR #32](https://github.com/DPontes/CppND-Capstone-Snake-Game/pull/32). Some improvements can be done, specifically:
+  - The loops in the `Border::insertBorder()` function could be better (there might even be a specific algorithm to do this, instead of 3 different for-loops)
+  - The memory management of the class could most likely be better. Will be investigated
+
 ## Project Requirements (Rubric)
 
 The rubric for this project has been translated into Automated Github Issues which can be followed in the [Project Kanban Board](https://github.com/DPontes/CppND-Capstone-Snake-Game/projects/1)
