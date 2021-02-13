@@ -15,10 +15,10 @@ class Border {
 
     std::vector<SDL_Point> getBorder();
     bool isBorderCell(int x, int y);
+    std::vector<SDL_Point> borderLine;
 
   private:
     void insertBorder();
-    std::vector<SDL_Point> borderLine;
     int grid_height;
     int grid_width;
 };
