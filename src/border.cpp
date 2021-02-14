@@ -5,12 +5,15 @@ void Border::insertBorder() {
 
     SDL_Point point;
 
-    // fill in the whole first row
+    // fill in the top and bottom rows
     for (int i = 0; i < grid_width; i++)
     {
         point.x = i;
         point.y = 0;
-        borderLine.push_back(point);    // should probably be emplace_back, and borderLine should be a pointer(?)
+        borderLine.push_back(point);
+        point.x = i;
+        point.y = grid_height - 1;
+        borderLine.push_back(point);
     }
 
     // fill the sidelines of the border
@@ -21,14 +24,6 @@ void Border::insertBorder() {
         borderLine.push_back(point);
         point.x = grid_width - 1;
         point.y = i;
-        borderLine.push_back(point);
-    }
-
-    // fill in the whole last row
-    for (int i = 0; i < grid_width; i++)
-    {
-        point.x = i;
-        point.y = grid_height - 1;
         borderLine.push_back(point);
     }
 }
