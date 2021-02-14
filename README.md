@@ -70,6 +70,8 @@ The base code from Udacity's repository is already organized into classes, with 
 
 #### Classes use appropriate access specifiers for class members
 
+The base code from Udacity's repository already has the correct access specifiers in the existing classes; moreover, the new `Border` class in the `border.h` file also has the correct access specifiers
+
 #### Class constructors utilize member initialization lists
 
 #### Classes abstract implementation details from their interfaces
