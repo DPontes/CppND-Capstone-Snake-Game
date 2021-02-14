@@ -113,6 +113,8 @@ The rubric for this project has been translated into Automated Github Issues whi
 
 #### 4.3.4. Classes abstract implementation details from their interfaces
 
+  - The base code from Udacity's repository already describes their effect through their names; moreover, the new `Border` class and it's members describe their effect through the name of the member functions.
+
 #### 4.3.5. Classes encapsulate behaviour
 
 #### 4.3.6. Classes follow an appropriate inheritance hierarchy
