@@ -4,7 +4,6 @@ This project is cloned from the Capstone project in the [Udacity C++ Nanodegree 
 
 This project was chosen due to the lack of time to complete it given the developer's situation.
 
-   * [CPPND: Capstone Snake Game](#cppnd-capstone-snake-game)
       * [1. Dependencies for Running Locally](#1-dependencies-for-running-locally)
       * [2. Basic Build Instructions](#2-basic-build-instructions)
       * [3. Enhancements to the game](#3-enhancements-to-the-game)
@@ -41,6 +40,8 @@ This project was chosen due to the lack of time to complete it given the develop
             * [4.5.3. A mutex or lock is used in the project](#453-a-mutex-or-lock-is-used-in-the-project)
             * [4.5.4. A condition variable is used](#454-a-condition-variable-is-used)
 
+- - - -
+
 ## 1. Dependencies for Running Locally
 * cmake >= 3.7
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
@@ -56,12 +57,16 @@ This project was chosen due to the lack of time to complete it given the develop
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
+- - - -
+
 ## 2. Basic Build Instructions
 
 1. Clone this repo.
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
+
+- - - -
 
 ## 3. Enhancements to the game
 
@@ -70,6 +75,12 @@ This project was chosen due to the lack of time to complete it given the develop
 An infinite world is rather boring, so a border around the perimeter was added as a new `Border` class. It is rendered as a green line, and if the snake goes *into* the border, the game finishes. The initial solution can be seen in the [PR #32](https://github.com/DPontes/CppND-Capstone-Snake-Game/pull/32), although this PR contained a couple of errors later fixed in the [PR #36](https://github.com/DPontes/CppND-Capstone-Snake-Game/pull/36).
 
 Currently the algorithm consists of two `for-loops` that go through the top and bottom edges, and the side edges, respectively. There might be a better algorithm to do this, but this solution will do for now.
+
+### 3.2. Added New `Obstacle` Class, inherited by `Snake` and `Border` classes
+
+During gameplay, the body of the snake, as well as the border around the perimeter act with the same function: a place where if the head of the snake touches, it's game over. As such, it was decided that the `body` of both the snake and the border would be a member of the `Obstacle` class which is then inherited by the `Snake` and `Border` classes.
+
+- - - -
 
 ## 4. Project Requirements (Rubric)
 

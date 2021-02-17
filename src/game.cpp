@@ -2,16 +2,16 @@
 #include <iostream>
 #include "SDL.h"
 
-Game::Game(std::size_t grid_width, std::size_t grid_height, Border &border)
+Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height, border),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
-      random_h(0, static_cast<int>(grid_height - 1)),
-      border(border) {
+      random_h(0, static_cast<int>(grid_height - 1)) {
   PlaceFood();
 }
 
-void Game::Run(Controller const &controller, Renderer &renderer,
+void Game::Run(Controller const &controller,
+               Renderer &renderer,
                std::size_t target_frame_duration) {
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
@@ -26,7 +26,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
     Update();
-    renderer.Render(snake, food);
+    renderer.Render(obstacle, snake, food);
 
     frame_end = SDL_GetTicks();
 
@@ -58,7 +58,7 @@ void Game::PlaceFood() {
     y = random_h(engine);
     // Check that the location is not occupied by a snake item before placing
     // food.
-    if (!snake.SnakeCell(x, y) && !border.isBorderCell(x, y)) {
+    if (!obstacle.IsObstacleCell(x, y)) {
       food.x = x;
       food.y = y;
       return;

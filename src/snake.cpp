@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 
-void Snake::Update() {
+void Snake::UpdateSnake() {
   SDL_Point prev_cell{
       static_cast<int>(head_x),
       static_cast<int>(head_y)
@@ -46,11 +46,10 @@ void Snake::UpdateHead() {
 
 void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {
   // Add previous head location to vector
-  body.push_back(prev_head_cell);
-
+  obstacleBody.push_back(prev_head_cell);
   if (!growing) {
     // Remove the tail from the vector.
-    body.erase(body.begin());
+    obstacleBody.erase(obstacleBody.begin());
   } else {
     growing = false;
     size++;

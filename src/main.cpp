@@ -2,7 +2,8 @@
 #include "controller.h"
 #include "game.h"
 #include "renderer.h"
-#include "border.h"
+#include "obstacle.h"
+//#include "border.h"
 
 int main() {
   constexpr std::size_t kFramesPerSecond{60};
@@ -12,8 +13,7 @@ int main() {
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
 
-  Border border(kGridWidth, kGridHeight);
-  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight, border);
+  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
   Game game(kGridWidth, kGridHeight, border);
   game.Run(controller, renderer, kMsPerFrame);
