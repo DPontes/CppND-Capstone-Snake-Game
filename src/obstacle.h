@@ -13,7 +13,10 @@ class Obstacle {
   std::vector<SDL_Point> obstacleBody;
   bool IsObstacleCell(int x, int y);
 
- private:
+  int _grid_height;
+  int _grid_width;
+
+private:
   /*
     Updates the whole vector that contains the body of the border
     as well as the body of the snake;
@@ -21,8 +24,6 @@ class Obstacle {
   void UpdateObstacleBody(SDL_Point &current_cell,
                           SDL_Point &previous_cell);
 
-  int _grid_height;
-  int _grid_width;
 };
 
 
@@ -30,13 +31,14 @@ class Snake : public Obstacle {
  public:
   enum class Direction { kUp, kDown, kLeft, kRight };
 
-  Snake() :
+  Snake(int grid_width, int grid_height) :
+    Obstacle(grid_width, grid_height),
     head_x(_grid_width  / 2),
     head_y(_grid_height / 2) {}
 
   void UpdateSnake();
 
-  void GrowSnakeBody();
+  void GrowBody();
 
   Direction direction = Direction::kUp;
 
@@ -49,13 +51,14 @@ class Snake : public Obstacle {
  private:
   void UpdateHead();
 
-  bool growing(false);
+  bool growing{false};
 };
 
 
 class Border : public Obstacle {
  public:
-  Border() : { insertBorder(); }
+  Border(int grid_width, int grid_height) :
+    Obstacle(grid_width, grid_height) { insertBorder(); }
 
  private:
   void insertBorder();

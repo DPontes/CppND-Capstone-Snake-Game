@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include "snake.h"
+#include "obstacle.h"
 
 class Controller {
  public:
