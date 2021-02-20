@@ -17,8 +17,8 @@ class Border {
 
   private:
     void insertBorder();
-    int grid_height;
-    int grid_width;
+    int _grid_height;
+    int _grid_width;
 };
 
 #endif
