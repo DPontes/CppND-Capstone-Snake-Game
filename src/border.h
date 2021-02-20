@@ -6,12 +6,10 @@
 
 class Border {
   public:
-    Border(int grid_width, int grid_height){
-        this->grid_width = grid_width;
-        this->grid_height = grid_height;
+    Border();
+    Border(int grid_width, int grid_height);
 
-        insertBorder();
-    }
+    ~Border();
 
     std::vector<SDL_Point> getBorder();
     bool isBorderCell(int x, int y);

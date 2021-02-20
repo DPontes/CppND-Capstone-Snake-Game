@@ -1,6 +1,17 @@
 #include "border.h"
 #include "SDL.h"
 
+Border::Border() {}
+
+Border::Border(int grid_width, int grid_height) {
+    _grid_width = grid_width;
+    _grid_height = grid_height;
+
+    insertBorder();
+}
+
+Border::~Border() {}
+
 void Border::insertBorder() {
 
     SDL_Point point;
@@ -28,7 +39,7 @@ void Border::insertBorder() {
     }
 }
 
-std::vector<SDL_Point> Border :: getBorder() {
+std::vector<SDL_Point> Border::getBorder() {
     return borderLine;
 }
 
