@@ -6,9 +6,10 @@
 
 class Obstacle {
  public:
+  Obstacle() {};
   Obstacle(int grid_width, int grid_height) :
     _grid_width(grid_width),
-    _grid_height(grid_height) {}
+    _grid_height(grid_height) {};
 
   std::vector<SDL_Point> obstacleBody;
   bool IsObstacleCell(int x, int y);
