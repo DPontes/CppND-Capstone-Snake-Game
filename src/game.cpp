@@ -2,6 +2,8 @@
 #include <iostream>
 #include "SDL.h"
 
+Game::Game() {}
+
 Game::Game(std::size_t grid_width, std::size_t grid_height, Border &border)
     : snake(grid_width, grid_height, border),
       engine(dev()),
@@ -10,6 +12,8 @@ Game::Game(std::size_t grid_width, std::size_t grid_height, Border &border)
       border(border) {
   PlaceFood();
 }
+
+Game::~Game() {}
 
 void Game::Run(Controller const &controller, Renderer &renderer,
                std::size_t target_frame_duration) {

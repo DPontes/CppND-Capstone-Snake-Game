@@ -2,14 +2,17 @@
 #include <iostream>
 #include <string>
 
-Renderer::Renderer(const std::size_t screen_width,
-                   const std::size_t screen_height,
-                   const std::size_t grid_width, const std::size_t grid_height,
+Renderer::Renderer() {}
+
+Renderer::Renderer( std::size_t screen_width,
+                    std::size_t screen_height,
+                    std::size_t grid_width,
+                    std::size_t grid_height,
                    Border &border)
-    : screen_width(screen_width),
-      screen_height(screen_height),
-      grid_width(grid_width),
-      grid_height(grid_height),
+    : _screen_width(screen_width),
+      _screen_height(screen_height),
+      _grid_width(grid_width),
+      _grid_height(grid_height),
       border(border) {
 
   // Initialize SDL
@@ -43,8 +46,8 @@ Renderer::~Renderer() {
 
 void Renderer::Render(Snake const snake, SDL_Point const &food) {
   SDL_Rect block;
-  block.w = screen_width / grid_width;
-  block.h = screen_height / grid_height;
+  block.w = _screen_width / _grid_width;
+  block.h = _screen_height / _grid_height;
 
   // Clear screen
   SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
