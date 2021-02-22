@@ -131,6 +131,8 @@ The rubric for this project has been translated into Automated Github Issues whi
 
 #### 4.4.2. The project uses destructors appropriately
 
+  - In [PR #41](https://github.com/DPontes/CppND-Capstone-Snake-Game/pull/41) it was added the proper destructors to every class in the program.
+
 #### 4.4.3. The project uses [Resource Aquisition Is Initialization (RAII)](https://en.cppreference.com/w/cpp/language/raii) where appropriate
 
 #### 4.4.4. The project follows the [Rule Of 5](https://en.cppreference.com/w/cpp/language/rule_of_three)
