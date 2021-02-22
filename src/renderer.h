@@ -27,10 +27,10 @@ class Renderer {
 
   Border border;
 
-  std::size_t screen_width;
-  std::size_t screen_height;
-  std::size_t grid_width;
-  std::size_t grid_height;
+  std::size_t _screen_width;
+  std::size_t _screen_height;
+  std::size_t _grid_width;
+  std::size_t _grid_height;
 };
 
 #endif
