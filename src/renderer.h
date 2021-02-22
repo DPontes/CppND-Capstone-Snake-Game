@@ -10,8 +10,10 @@ class Renderer {
  public:
   Renderer();
 
-  Renderer(const std::size_t screen_width, const std::size_t screen_height,
-           const std::size_t grid_width, const std::size_t grid_height,
+  Renderer(std::size_t screen_width,
+           std::size_t screen_height,
+           std::size_t grid_width,
+           std::size_t grid_height,
            Border &border);
 
   ~Renderer();
@@ -25,10 +27,10 @@ class Renderer {
 
   Border border;
 
-  const std::size_t screen_width;
-  const std::size_t screen_height;
-  const std::size_t grid_width;
-  const std::size_t grid_height;
+  std::size_t screen_width;
+  std::size_t screen_height;
+  std::size_t grid_width;
+  std::size_t grid_height;
 };
 
 #endif
