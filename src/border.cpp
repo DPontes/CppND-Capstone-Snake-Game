@@ -39,10 +39,6 @@ void Border::insertBorder() {
     }
 }
 
-std::vector<SDL_Point> Border::getBorder() {
-    return borderLine;
-}
-
 bool Border :: isBorderCell(int x, int y) {
     for (auto const &point : borderLine)
     {
