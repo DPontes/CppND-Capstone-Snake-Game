@@ -8,7 +8,7 @@ Renderer::Renderer( std::size_t screen_width,
                     std::size_t screen_height,
                     std::size_t grid_width,
                     std::size_t grid_height,
-                   Border &border)
+                    Border &border)
     : _screen_width(screen_width),
       _screen_height(screen_height),
       _grid_width(grid_width),
@@ -55,10 +55,15 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
 
   // Render border - colour green
   SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0xFF, 0x00, 0x00);
-  for( size_t i = 0; i < border.getBorder().size(); i++)
-  {
-    block.x = border.getBorder()[i].x * block.w;
-    block.y = border.getBorder()[i].y * block.h;
+  //for( size_t i = 0; i < border.getBorder().size(); i++)
+  //{
+  //  block.x = border.getBorder()[i].x * block.w;
+  //  block.y = border.getBorder()[i].y * block.h;
+  //  SDL_RenderFillRect(sdl_renderer, &block);
+  //}
+  for(SDL_Point const & point : border.borderLine) {
+    block.x = point.x * block.w;
+    block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
 
