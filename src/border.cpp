@@ -12,6 +12,13 @@ Border::Border(int grid_width, int grid_height) {
 
 Border::~Border() {}
 
+Border::Border(const Border &source) {
+    _grid_width = source._grid_width;
+    _grid_hright = source._grid_height;
+
+    insertBorder;
+}
+
 void Border::insertBorder() {
 
     SDL_Point point;
@@ -39,7 +46,7 @@ void Border::insertBorder() {
     }
 }
 
-bool Border :: isBorderCell(int x, int y) {
+bool Border::isBorderCell(int x, int y) {
     for (auto const &point : borderLine)
     {
         if(x == point.x && y == point.y)
