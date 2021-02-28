@@ -6,13 +6,18 @@ Border::Border() {}
 Border::Border(int grid_width, int grid_height) {
     _grid_width = grid_width;
     _grid_height = grid_height;
-
-    insertBorder();
 }
 
 Border::~Border() {}
 
 Border::Border(const Border &source) {
+    _grid_width = source._grid_width;
+    _grid_height = source._grid_height;
+
+    insertBorder();
+}
+
+Border::Border(const Border &&source) {
     _grid_width = source._grid_width;
     _grid_height = source._grid_height;
 
