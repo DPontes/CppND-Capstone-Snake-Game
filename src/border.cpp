@@ -14,9 +14,9 @@ Border::~Border() {}
 
 Border::Border(const Border &source) {
     _grid_width = source._grid_width;
-    _grid_hright = source._grid_height;
+    _grid_height = source._grid_height;
 
-    insertBorder;
+    insertBorder();
 }
 
 void Border::insertBorder() {
