@@ -34,7 +34,7 @@ Border &Border::operator=(const Border &source) {
     return *this;
 }
 
-Border &Border::operator=(const Border &&source) {
+Border &Border::operator=(Border &&source) {
     if(this == &source)
         return *this;
 
