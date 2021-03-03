@@ -11,7 +11,7 @@
 class Game {
  public:
   Game();
-  Game(std::size_t grid_width, std::size_t grid_height, Border &border);
+  Game(std::size_t grid_width, std::size_t grid_height);
   ~Game();
 
   void Run(Controller const &controller, Renderer &renderer,

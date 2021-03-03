@@ -4,8 +4,9 @@
 
 Game::Game() {}
 
-Game::Game(std::size_t grid_width, std::size_t grid_height, Border &border)
-    : snake(grid_width, grid_height, border),
+Game::Game(std::size_t grid_width, std::size_t grid_height)
+    : border(grid_width, grid_height),
+      snake(grid_width, grid_height, border),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
       random_h(0, static_cast<int>(grid_height - 1)),
