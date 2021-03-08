@@ -2,6 +2,7 @@
 #define SNAKE_H
 
 #include <vector>
+#include <memory>
 #include "SDL.h"
 #include "border.h"
 
@@ -30,7 +31,7 @@ class Snake {
 
  private:
   void UpdateHead();
-  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell, std::unique_ptr<std::vector>> borderLine);
+  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell, std::unique_ptr<std::vector<SDL_Point>> borderLine);
 
   bool growing{false};
   int grid_width;

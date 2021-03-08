@@ -55,7 +55,7 @@ void Snake::UpdateHead() {
   head_y = fmod(head_y + grid_height, grid_height);
 }
 
-void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell, std::unique_ptr<std::vector>> borderLine) {
+void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell, std::unique_ptr<std::vector<SDL_Point>> borderLine) {
   // Add previous head location to vector
   body.push_back(prev_head_cell);
 
