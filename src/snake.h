@@ -9,13 +9,13 @@ class Snake {
  public:
   Snake();
 
-  Snake(int grid_width, int grid_height, Border &border);
+  Snake(int grid_width, int grid_height);
 
   ~Snake();
 
   enum class Direction { kUp, kDown, kLeft, kRight };
 
-  void Update();
+  void Update(std::unique_ptr<std::vector<SDL_Point>> borderLine);
   void GrowBody();
   bool SnakeCell(int x, int y);
 
@@ -30,7 +30,7 @@ class Snake {
 
  private:
   void UpdateHead();
-  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell);
+  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell, std::unique_ptr<std::vector>> borderLine);
 
   bool growing{false};
   int grid_width;

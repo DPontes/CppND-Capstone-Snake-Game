@@ -20,9 +20,9 @@ class Game {
   int GetSize() const;
 
  private:
+  Border border;
   Snake snake;
   SDL_Point food;
-  Border border;
 
   std::random_device dev;
   std::mt19937 engine;
@@ -30,6 +30,7 @@ class Game {
   std::uniform_int_distribution<int> random_h;
 
   int score{0};
+  std::unique_ptr<std::vector<SDL_Point>> borderLine;
 
   void PlaceFood();
   void Update();

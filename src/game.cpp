@@ -6,7 +6,7 @@ Game::Game() {}
 
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : border(grid_width, grid_height),
-      snake(grid_width, grid_height, border),
+      snake(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
       random_h(0, static_cast<int>(grid_height - 1))
@@ -74,7 +74,9 @@ void Game::PlaceFood() {
 void Game::Update() {
   if (!snake.alive) return;
 
-  snake.Update();
+  std::unique_ptr<std::vector<SDL_Point>> borderLine = std::make_unique<std::vector<SDL_Point>>(border.borderLine);
+
+  snake.Update(std::move(borderLine));
 
   int new_x = static_cast<int>(snake.head_x);
   int new_y = static_cast<int>(snake.head_y);
