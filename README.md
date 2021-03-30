@@ -77,15 +77,15 @@ The rubric for this project has been translated into Automated Github Issues whi
 
 ### 4.1. README
 
-#### 4.1.1. A README with instructions is included in the project
+#### 4.1.1. A README with instructions is included in the project [x]
 
   - This information can be found above in this README file
 
-#### 4.1.2. The README includes information about each rubric point addressed
+#### 4.1.2. The README includes information about each rubric point addressed [x]
 
   - Well, you're looking at it :)
 
-#### 4.1.3. The README indicates which project was chosen
+#### 4.1.3. The README indicates which project was chosen [x]
 
   - Again, this information can be found above in this file
 
@@ -95,23 +95,23 @@ The rubric for this project has been translated into Automated Github Issues whi
 
 #### 4.2.2. The project reads data from a file or writes data to a file
 
-#### 4.2.3. The project accepts user input and processes the input
+#### 4.2.3. The project accepts user input and processes the input [x]
 
   - The base code from Udacity's repository already includes the acceptance of user input to move the snake in the game.
 
 ### 4.3. Object Oriented Programming
 
-#### 4.3.1. The project used Object Oriented Programming techniques
+#### 4.3.1. The project used Object Oriented Programming techniques [x]
 
   - The base code from Udacity's repository is already organized into classes, with attributes and methods.
 
-#### 4.3.2. Classes use appropriate access specifiers for class members
+#### 4.3.2. Classes use appropriate access specifiers for class members [x]
 
   - The base code from Udacity's repository already has the correct access specifiers in the existing classes; moreover, the new `Border` class in the `border.h` file also has the correct access specifiers
 
 #### 4.3.3. Class constructors utilize member initialization lists
 
-#### 4.3.4. Classes abstract implementation details from their interfaces
+#### 4.3.4. Classes abstract implementation details from their interfaces [x]
 
   - The base code from Udacity's repository already describes their effect through their names; moreover, the new `Border` class and it's members describe their effect through the name of the member functions.
 
@@ -129,7 +129,7 @@ The rubric for this project has been translated into Automated Github Issues whi
 
 #### 4.4.1. The project makes use of references in function declarations
 
-#### 4.4.2. The project uses destructors appropriately
+#### 4.4.2. The project uses destructors appropriately [x]
 
   - In [PR #41](https://github.com/DPontes/CppND-Capstone-Snake-Game/pull/41) it was added the proper destructors to every class in the program.
 
