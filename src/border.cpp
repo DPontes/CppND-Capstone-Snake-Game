@@ -24,29 +24,6 @@ Border::Border(const Border &&source) {
     insertBorder();
 }
 
-Border &Border::operator=(const Border &source) {
-    if(this == &source)
-        return *this;
-
-    _grid_width = source._grid_width;
-    _grid_height = source._grid_height;
-
-    return *this;
-}
-
-Border &Border::operator=(Border &&source) {
-    if(this == &source)
-        return *this;
-
-    _grid_width = source._grid_width;
-    _grid_height = source._grid_height;
-
-    //source._grid_width = nullptr;
-    //source._grid_height = nullptr;
-
-    return *this;
-
-}
 
 void Border::insertBorder() {
 
