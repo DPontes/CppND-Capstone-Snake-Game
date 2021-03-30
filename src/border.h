@@ -11,8 +11,6 @@ class Border {
     ~Border();
     Border(const Border &source);
     Border(const Border &&source);
-    Border &operator=(const Border &source);
-    Border &operator=(Border &&source);
 
     bool isBorderCell(int x, int y);
     std::vector<SDL_Point> borderLine;
