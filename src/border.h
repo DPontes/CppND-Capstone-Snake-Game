@@ -8,10 +8,10 @@ class Border {
   public:
     Border();
     Border(int grid_width, int grid_height);
-
     ~Border();
+    Border(const Border &source);
+    Border(const Border &&source);
 
-    std::vector<SDL_Point> getBorder();
     bool isBorderCell(int x, int y);
     std::vector<SDL_Point> borderLine;
 

@@ -4,16 +4,16 @@
 
 Snake::Snake() {}
 
-Snake::Snake(int grid_width, int grid_height, Border &border)
+Snake::Snake(int grid_width, int grid_height)
       : grid_width(grid_width),
         grid_height(grid_height),
         head_x(grid_width / 2),
-        head_y(grid_height / 2),
-        border(border) {}
+        head_y(grid_height / 2)
+        {}
 
 Snake::~Snake() {}
 
-void Snake::Update() {
+void Snake::Update(std::unique_ptr<std::vector<SDL_Point>> borderLine) {
   SDL_Point prev_cell{
       static_cast<int>(head_x),
       static_cast<int>(head_y)
@@ -27,7 +27,7 @@ void Snake::Update() {
   // Update all of the body vector items if the snake head has moved to a new
   // cell.
   if (current_cell.x != prev_cell.x || current_cell.y != prev_cell.y) {
-    UpdateBody(current_cell, prev_cell);
+    UpdateBody(current_cell, prev_cell, std::move(borderLine));
   }
 }
 
@@ -55,7 +55,7 @@ void Snake::UpdateHead() {
   head_y = fmod(head_y + grid_height, grid_height);
 }
 
-void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {
+void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell, std::unique_ptr<std::vector<SDL_Point>> borderLine) {
   // Add previous head location to vector
   body.push_back(prev_head_cell);
 
@@ -75,7 +75,7 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
   }
 
   // Check if the snake has gone against the border
-  for (auto const &item : border.getBorder()) {
+  for (auto const item : *borderLine) {
     if (current_head_cell.x == item.x && current_head_cell.y == item.y) {
       alive = false;
     }
