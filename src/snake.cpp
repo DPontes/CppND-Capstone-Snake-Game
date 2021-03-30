@@ -75,7 +75,7 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell, 
   }
 
   // Check if the snake has gone against the border
-  for (auto const &item : borderLine) {
+  for (auto const item : *borderLine) {
     if (current_head_cell.x == item.x && current_head_cell.y == item.y) {
       alive = false;
     }
