@@ -98,9 +98,7 @@ The rubric for this project has been translated into Automated Github Issues whi
 
 #### 4.4.3. The project uses [Resource Aquisition Is Initialization (RAII)](https://en.cppreference.com/w/cpp/language/raii) where appropriate
 
-#### 4.4.4. The project follows the [Rule Of 5](https://en.cppreference.com/w/cpp/language/rule_of_three) :heavy_check_mark:
-
-  - In [PR #45](https://github.com/DPontes/CppND-Capstone-Snake-Game/pull/45) the Rule-of-3 (instead of the Rule-of-5) was introduced for the `Border` class. The reason behind using the Rule-of-3 instead of the *Rule-of-5* was for the sake of simplicity.
+#### 4.4.4. The project follows the [Rule Of 5](https://en.cppreference.com/w/cpp/language/rule_of_three)
 
 #### 4.4.5. The project uses `move` semantics to move, instead of copying, data (where possible)
 
