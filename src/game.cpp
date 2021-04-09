@@ -73,7 +73,7 @@ void Game::PlaceFood() {
 void Game::Update() {
   if (!snake.alive) return;
 
-  std::unique_ptr<std::vector<SDL_Point>> borderLine = std::make_unique<std::vector<SDL_Point>>(border.borderLine);
+  pv_SDL borderLine { new vectorPoints{border.borderLine} };
 
   snake.Update(std::move(borderLine));
 
