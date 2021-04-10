@@ -8,6 +8,9 @@
 #include "snake.h"
 #include "border.h"
 
+using vectorPoints = std::vector<SDL_Point>;
+using pv_SDL = std::unique_ptr<vectorPoints>;
+
 class Game {
  public:
   Game();
@@ -30,7 +33,7 @@ class Game {
   std::uniform_int_distribution<int> random_h;
 
   int score{0};
-  std::unique_ptr<std::vector<SDL_Point>> borderLine;
+  pv_SDL borderLine;
 
   void PlaceFood();
   void Update();
