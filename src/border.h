@@ -2,6 +2,7 @@
 #define BORDER_H
 
 #include "SDL.h"
+
 #include <vector>
 #include <memory>
 

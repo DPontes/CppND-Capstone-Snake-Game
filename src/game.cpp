@@ -1,6 +1,7 @@
 #include "game.h"
-#include <iostream>
 #include "SDL.h"
+
+#include <iostream>
 
 Game::Game() {}
 
