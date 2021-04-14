@@ -3,17 +3,19 @@
 
 #include "SDL.h"
 #include <vector>
+#include <memory>
+
+using vSDLPoints = std::vector<SDL_Point>;
+using p_vSDLPoints = std::unique_ptr<vSDLPoints>;
 
 class Border {
   public:
     Border();
     Border(int grid_width, int grid_height);
     ~Border();
-    //Border(const Border &source);
-    //Border(const Border &&source);
 
     bool isBorderCell(int x, int y);
-    std::vector<SDL_Point> borderLine;
+    vSDLPoints borderLine;
 
   private:
     void insertBorder();
