@@ -2,12 +2,8 @@
 #define SNAKE_H
 
 #include <vector>
-#include <memory>
 #include "SDL.h"
 #include "border.h"
-
-using vectorPoints = std::vector<SDL_Point>;
-using pv_SDL = std::unique_ptr<vectorPoints>;
 
 class Snake {
  public:
@@ -19,7 +15,7 @@ class Snake {
 
   enum class Direction { kUp, kDown, kLeft, kRight };
 
-  void Update(pv_SDL borderLine);
+  void Update(p_vSDLPoints borderLine);
   void GrowBody();
   bool SnakeCell(int x, int y);
 
@@ -30,11 +26,11 @@ class Snake {
   bool alive{true};
   float head_x;
   float head_y;
-  vectorPoints body;
+  vSDLPoints body;
 
  private:
   void UpdateHead();
-  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell, pv_SDL borderLine);
+  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell, p_vSDLPoints borderLine);
 
   bool growing{false};
   int grid_width;
