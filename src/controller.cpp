@@ -1,8 +1,4 @@
 #include "controller.h"
-#include "SDL.h"
-#include "snake.h"
-
-#include <iostream>
 
 Controller::Controller() {}
 

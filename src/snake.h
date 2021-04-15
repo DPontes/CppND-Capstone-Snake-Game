@@ -1,10 +1,10 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include "SDL.h"
 #include "border.h"
 
-#include <vector>
+#include <cmath>
+#include <iostream>
 
 class Snake {
  public:
