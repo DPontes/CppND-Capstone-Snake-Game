@@ -1,10 +1,11 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include <vector>
 #include "SDL.h"
 #include "snake.h"
 #include "border.h"
+
+#include <vector>
 
 class Renderer {
  public:
