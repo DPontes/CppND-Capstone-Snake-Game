@@ -1,4 +1,4 @@
-#include "border.h"
+#include "../border.h"
 
 Border::Border() {}
 

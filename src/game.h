@@ -1,8 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "controller.h"
-#include "renderer.h"
+#include "Helper/controller.h"
+#include "Helper/renderer.h"
 
 #include <random>
 #include <iostream>
