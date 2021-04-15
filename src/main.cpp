@@ -1,7 +1,6 @@
-#include "controller.h"
+#include "Helper/controller.h"
 #include "game.h"
-#include "renderer.h"
-#include "border.h"
+#include "Helper/renderer.h"
 
 #include <iostream>
 

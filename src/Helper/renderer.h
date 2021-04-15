@@ -2,8 +2,8 @@
 #define RENDERER_H
 
 #include "SDL.h"
-#include "snake.h"
-#include "border.h"
+#include "../Objects/snake.h"
+#include "../Objects/border.h"
 
 #include <vector>
 
